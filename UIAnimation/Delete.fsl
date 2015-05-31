@@ -1,0 +1,19 @@
+#version 300 es
+
+precision mediump float;
+
+uniform sampler2D s_delete_texture;
+uniform float amplitude;
+uniform float bottomAmplitude;
+
+in vec2 v_texCoords;
+
+layout(location = 0) out vec4 out_color;
+
+void main() {
+    if (gl_FragCoord.y < amplitude && gl_FragCoord.y > bottomAmplitude) {
+        out_color = texture(s_delete_texture, v_texCoords);
+    } else {
+        discard;
+    }
+}

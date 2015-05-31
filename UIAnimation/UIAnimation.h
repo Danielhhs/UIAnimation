@@ -6,8 +6,13 @@
 //  Copyright (c) 2015 cn.daniel. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-
+#import <GLKit/GLKit.h>
+#import <UIAnimation/SpinRenderer.h>
+#import <UIAnimation/DeleteRenderer.h>
+#import <UIAnimation/ClothesLineRenderer.h>
+#import <UIAnimation/SwitchRenderer.h>
+#import <UIAnimation/WaterRippleRenderer.h>
+#import <UIAnimation/UIView+Genie.h>
 @interface UIAnimation : NSObject
 
 @end

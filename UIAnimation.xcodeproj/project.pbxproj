@@ -6,10 +6,58 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		54A6A1EE1B0C3AD400F9D206 /* UIAnimationFramework */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 54A6A1EF1B0C3AD400F9D206 /* Build configuration list for PBXAggregateTarget "UIAnimationFramework" */;
+			buildPhases = (
+				54A6A1F41B0C3AE400F9D206 /* ShellScript */,
+			);
+			dependencies = (
+				54A6A23D1B0C578D00F9D206 /* PBXTargetDependency */,
+				54A6A1F31B0C3ADD00F9D206 /* PBXTargetDependency */,
+			);
+			name = UIAnimationFramework;
+			productName = UIAnimationFramework;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
+		543A04231B170DA2002A22D3 /* SwitchRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 543A04211B170DA2002A22D3 /* SwitchRenderer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		543A04241B170DA2002A22D3 /* SwitchRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 543A04221B170DA2002A22D3 /* SwitchRenderer.m */; };
+		543A08C41B1AC9CE002A22D3 /* WaterRippleRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 543A08C21B1AC9CE002A22D3 /* WaterRippleRenderer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		543A08C51B1AC9CE002A22D3 /* WaterRippleRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 543A08C31B1AC9CE002A22D3 /* WaterRippleRenderer.m */; };
+		543A08CA1B1AC9E1002A22D3 /* RippleModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 543A08C61B1AC9E1002A22D3 /* RippleModel.h */; };
+		543A08CB1B1AC9E1002A22D3 /* RippleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 543A08C71B1AC9E1002A22D3 /* RippleModel.m */; };
+		543A08CC1B1AC9E6002A22D3 /* Ripple.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 543A08C81B1AC9E1002A22D3 /* Ripple.fsh */; };
+		543A08CD1B1AC9E9002A22D3 /* Ripple.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 543A08C91B1AC9E1002A22D3 /* Ripple.vsh */; };
+		543A08F21B1AE1E1002A22D3 /* UIView+Genie.h in Headers */ = {isa = PBXBuildFile; fileRef = 543A08BD1B1AC6D4002A22D3 /* UIView+Genie.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		543A08F31B1AE1E5002A22D3 /* UIView+Genie.m in Sources */ = {isa = PBXBuildFile; fileRef = 543A08BE1B1AC6D4002A22D3 /* UIView+Genie.m */; };
 		54A6A1AB1B0C32EB00F9D206 /* UIAnimation.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 54A6A1AA1B0C32EB00F9D206 /* UIAnimation.h */; };
 		54A6A1AD1B0C32EB00F9D206 /* UIAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A6A1AC1B0C32EB00F9D206 /* UIAnimation.m */; };
 		54A6A1B31B0C32EB00F9D206 /* libUIAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 54A6A1A71B0C32EB00F9D206 /* libUIAnimation.a */; };
+		54A6A1C21B0C339900F9D206 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54A6A1C11B0C339900F9D206 /* GLKit.framework */; };
+		54A6A1C91B0C33B800F9D206 /* DeleteRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A6A1C61B0C33B800F9D206 /* DeleteRenderer.m */; };
+		54A6A1CA1B0C33B800F9D206 /* DeleteSceneMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A6A1C81B0C33B800F9D206 /* DeleteSceneMesh.m */; };
+		54A6A1DB1B0C33D700F9D206 /* OpenGLHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A6A1CD1B0C33D700F9D206 /* OpenGLHelper.m */; };
+		54A6A1DC1B0C33D700F9D206 /* SceneMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A6A1CF1B0C33D700F9D206 /* SceneMesh.m */; };
+		54A6A1DD1B0C33D700F9D206 /* SpinBackMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A6A1D31B0C33D700F9D206 /* SpinBackMesh.m */; };
+		54A6A1DE1B0C33D700F9D206 /* SpinFrontMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A6A1D51B0C33D700F9D206 /* SpinFrontMesh.m */; };
+		54A6A1DF1B0C33D700F9D206 /* SpinRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A6A1D71B0C33D700F9D206 /* SpinRenderer.m */; };
+		54A6A1E41B0C346800F9D206 /* UIAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 54A6A1AA1B0C32EB00F9D206 /* UIAnimation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		54A6A1E51B0C347900F9D206 /* SpinRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 54A6A1D61B0C33D700F9D206 /* SpinRenderer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		54A6A1E61B0C348400F9D206 /* DeleteRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 54A6A1C51B0C33B800F9D206 /* DeleteRenderer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		54A6A1E71B0C359800F9D206 /* SceneMesh.h in Headers */ = {isa = PBXBuildFile; fileRef = 54A6A1CE1B0C33D700F9D206 /* SceneMesh.h */; };
+		54A6A1E81B0C359A00F9D206 /* OpenGLHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 54A6A1CC1B0C33D700F9D206 /* OpenGLHelper.h */; };
+		54A6A1EA1B0C35A200F9D206 /* SpinBackMesh.h in Headers */ = {isa = PBXBuildFile; fileRef = 54A6A1D21B0C33D700F9D206 /* SpinBackMesh.h */; };
+		54A6A1EB1B0C35A600F9D206 /* SpinFrontMesh.h in Headers */ = {isa = PBXBuildFile; fileRef = 54A6A1D41B0C33D700F9D206 /* SpinFrontMesh.h */; };
+		54A6A1EC1B0C35AC00F9D206 /* DeleteSceneMesh.h in Headers */ = {isa = PBXBuildFile; fileRef = 54A6A1C71B0C33B800F9D206 /* DeleteSceneMesh.h */; };
+		54A6A2381B0C577900F9D206 /* Spin.vsl in Resources */ = {isa = PBXBuildFile; fileRef = 54A6A1D11B0C33D700F9D206 /* Spin.vsl */; };
+		54A6A23A1B0C577E00F9D206 /* Delete.fsl in Resources */ = {isa = PBXBuildFile; fileRef = 54A6A1C31B0C33B800F9D206 /* Delete.fsl */; };
+		54A6A23B1B0C578000F9D206 /* Delete.vsl in Resources */ = {isa = PBXBuildFile; fileRef = 54A6A1C41B0C33B800F9D206 /* Delete.vsl */; };
+		54A6A2481B0C5D9B00F9D206 /* Spin.fsl in Resources */ = {isa = PBXBuildFile; fileRef = 54A6A1D01B0C33D700F9D206 /* Spin.fsl */; };
+		54E019321B106C3500D57EA3 /* ClothesLineRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 54E019301B106C3500D57EA3 /* ClothesLineRenderer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		54E019331B106C3500D57EA3 /* ClothesLineRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E019311B106C3500D57EA3 /* ClothesLineRenderer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -19,6 +67,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = 54A6A1A61B0C32EB00F9D206;
 			remoteInfo = UIAnimation;
+		};
+		54A6A1F21B0C3ADD00F9D206 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 54A6A19F1B0C32EB00F9D206 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 54A6A1A61B0C32EB00F9D206;
+			remoteInfo = UIAnimation;
+		};
+		54A6A23C1B0C578D00F9D206 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 54A6A19F1B0C32EB00F9D206 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 54A6A2301B0C56D800F9D206;
+			remoteInfo = UIAnimationBundle;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -36,11 +98,45 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		543A04211B170DA2002A22D3 /* SwitchRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwitchRenderer.h; sourceTree = "<group>"; };
+		543A04221B170DA2002A22D3 /* SwitchRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwitchRenderer.m; sourceTree = "<group>"; };
+		543A08BD1B1AC6D4002A22D3 /* UIView+Genie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Genie.h"; sourceTree = "<group>"; };
+		543A08BE1B1AC6D4002A22D3 /* UIView+Genie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Genie.m"; sourceTree = "<group>"; };
+		543A08C21B1AC9CE002A22D3 /* WaterRippleRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaterRippleRenderer.h; sourceTree = "<group>"; };
+		543A08C31B1AC9CE002A22D3 /* WaterRippleRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaterRippleRenderer.m; sourceTree = "<group>"; };
+		543A08C61B1AC9E1002A22D3 /* RippleModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RippleModel.h; sourceTree = "<group>"; };
+		543A08C71B1AC9E1002A22D3 /* RippleModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RippleModel.m; sourceTree = "<group>"; };
+		543A08C81B1AC9E1002A22D3 /* Ripple.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = Ripple.fsh; sourceTree = "<group>"; };
+		543A08C91B1AC9E1002A22D3 /* Ripple.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = Ripple.vsh; sourceTree = "<group>"; };
 		54A6A1A71B0C32EB00F9D206 /* libUIAnimation.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libUIAnimation.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		54A6A1AA1B0C32EB00F9D206 /* UIAnimation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIAnimation.h; sourceTree = "<group>"; };
 		54A6A1AC1B0C32EB00F9D206 /* UIAnimation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIAnimation.m; sourceTree = "<group>"; };
 		54A6A1B21B0C32EB00F9D206 /* UIAnimationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UIAnimationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		54A6A1B81B0C32EB00F9D206 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		54A6A1C11B0C339900F9D206 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		54A6A1C31B0C33B800F9D206 /* Delete.fsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Delete.fsl; sourceTree = "<group>"; };
+		54A6A1C41B0C33B800F9D206 /* Delete.vsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Delete.vsl; sourceTree = "<group>"; };
+		54A6A1C51B0C33B800F9D206 /* DeleteRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeleteRenderer.h; sourceTree = "<group>"; };
+		54A6A1C61B0C33B800F9D206 /* DeleteRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeleteRenderer.m; sourceTree = "<group>"; };
+		54A6A1C71B0C33B800F9D206 /* DeleteSceneMesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeleteSceneMesh.h; sourceTree = "<group>"; };
+		54A6A1C81B0C33B800F9D206 /* DeleteSceneMesh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeleteSceneMesh.m; sourceTree = "<group>"; };
+		54A6A1CC1B0C33D700F9D206 /* OpenGLHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenGLHelper.h; sourceTree = "<group>"; };
+		54A6A1CD1B0C33D700F9D206 /* OpenGLHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenGLHelper.m; sourceTree = "<group>"; };
+		54A6A1CE1B0C33D700F9D206 /* SceneMesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneMesh.h; sourceTree = "<group>"; };
+		54A6A1CF1B0C33D700F9D206 /* SceneMesh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SceneMesh.m; sourceTree = "<group>"; };
+		54A6A1D01B0C33D700F9D206 /* Spin.fsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Spin.fsl; sourceTree = "<group>"; };
+		54A6A1D11B0C33D700F9D206 /* Spin.vsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Spin.vsl; sourceTree = "<group>"; };
+		54A6A1D21B0C33D700F9D206 /* SpinBackMesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpinBackMesh.h; sourceTree = "<group>"; };
+		54A6A1D31B0C33D700F9D206 /* SpinBackMesh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpinBackMesh.m; sourceTree = "<group>"; };
+		54A6A1D41B0C33D700F9D206 /* SpinFrontMesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpinFrontMesh.h; sourceTree = "<group>"; };
+		54A6A1D51B0C33D700F9D206 /* SpinFrontMesh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpinFrontMesh.m; sourceTree = "<group>"; };
+		54A6A1D61B0C33D700F9D206 /* SpinRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpinRenderer.h; sourceTree = "<group>"; };
+		54A6A1D71B0C33D700F9D206 /* SpinRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpinRenderer.m; sourceTree = "<group>"; };
+		54A6A1D81B0C33D700F9D206 /* toImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = toImage.jpg; sourceTree = "<group>"; };
+		54A6A2311B0C56D800F9D206 /* UIAnimation.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UIAnimation.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		54A6A2341B0C56D800F9D206 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		54E019301B106C3500D57EA3 /* ClothesLineRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClothesLineRenderer.h; sourceTree = "<group>"; };
+		54E019311B106C3500D57EA3 /* ClothesLineRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClothesLineRenderer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +144,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54A6A1C21B0C339900F9D206 /* GLKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,14 +156,54 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		54A6A22E1B0C56D800F9D206 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		543A04251B170DA9002A22D3 /* Switch */ = {
+			isa = PBXGroup;
+			children = (
+				543A04211B170DA2002A22D3 /* SwitchRenderer.h */,
+				543A04221B170DA2002A22D3 /* SwitchRenderer.m */,
+			);
+			name = Switch;
+			sourceTree = "<group>";
+		};
+		543A08BC1B1AC6CC002A22D3 /* Genie */ = {
+			isa = PBXGroup;
+			children = (
+				543A08BD1B1AC6D4002A22D3 /* UIView+Genie.h */,
+				543A08BE1B1AC6D4002A22D3 /* UIView+Genie.m */,
+			);
+			name = Genie;
+			sourceTree = "<group>";
+		};
+		543A08C11B1AC9BD002A22D3 /* RippleAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				543A08C61B1AC9E1002A22D3 /* RippleModel.h */,
+				543A08C71B1AC9E1002A22D3 /* RippleModel.m */,
+				543A08C81B1AC9E1002A22D3 /* Ripple.fsh */,
+				543A08C91B1AC9E1002A22D3 /* Ripple.vsh */,
+				543A08C21B1AC9CE002A22D3 /* WaterRippleRenderer.h */,
+				543A08C31B1AC9CE002A22D3 /* WaterRippleRenderer.m */,
+			);
+			name = RippleAnimation;
+			sourceTree = "<group>";
+		};
 		54A6A19E1B0C32EB00F9D206 = {
 			isa = PBXGroup;
 			children = (
+				54A6A1C11B0C339900F9D206 /* GLKit.framework */,
 				54A6A1A91B0C32EB00F9D206 /* UIAnimation */,
 				54A6A1B61B0C32EB00F9D206 /* UIAnimationTests */,
+				54A6A2321B0C56D800F9D206 /* UIAnimationBundle */,
 				54A6A1A81B0C32EB00F9D206 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -76,6 +213,7 @@
 			children = (
 				54A6A1A71B0C32EB00F9D206 /* libUIAnimation.a */,
 				54A6A1B21B0C32EB00F9D206 /* UIAnimationTests.xctest */,
+				54A6A2311B0C56D800F9D206 /* UIAnimation.bundle */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -83,8 +221,15 @@
 		54A6A1A91B0C32EB00F9D206 /* UIAnimation */ = {
 			isa = PBXGroup;
 			children = (
+				543A08C11B1AC9BD002A22D3 /* RippleAnimation */,
+				543A08BC1B1AC6CC002A22D3 /* Genie */,
+				543A04251B170DA9002A22D3 /* Switch */,
+				54E0192F1B106C2400D57EA3 /* ClothesLine */,
 				54A6A1AA1B0C32EB00F9D206 /* UIAnimation.h */,
 				54A6A1AC1B0C32EB00F9D206 /* UIAnimation.m */,
+				54A6A1E21B0C33EC00F9D206 /* OpenGL Helper */,
+				54A6A1E11B0C33DE00F9D206 /* SpinAnimation */,
+				54A6A1CB1B0C33BD00F9D206 /* DeleteAnimation */,
 			);
 			path = UIAnimation;
 			sourceTree = "<group>";
@@ -105,7 +250,95 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		54A6A1CB1B0C33BD00F9D206 /* DeleteAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				54A6A1C31B0C33B800F9D206 /* Delete.fsl */,
+				54A6A1C41B0C33B800F9D206 /* Delete.vsl */,
+				54A6A1C51B0C33B800F9D206 /* DeleteRenderer.h */,
+				54A6A1C61B0C33B800F9D206 /* DeleteRenderer.m */,
+				54A6A1C71B0C33B800F9D206 /* DeleteSceneMesh.h */,
+				54A6A1C81B0C33B800F9D206 /* DeleteSceneMesh.m */,
+			);
+			name = DeleteAnimation;
+			sourceTree = "<group>";
+		};
+		54A6A1E11B0C33DE00F9D206 /* SpinAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				54A6A1D01B0C33D700F9D206 /* Spin.fsl */,
+				54A6A1D11B0C33D700F9D206 /* Spin.vsl */,
+				54A6A1D21B0C33D700F9D206 /* SpinBackMesh.h */,
+				54A6A1D31B0C33D700F9D206 /* SpinBackMesh.m */,
+				54A6A1D41B0C33D700F9D206 /* SpinFrontMesh.h */,
+				54A6A1D51B0C33D700F9D206 /* SpinFrontMesh.m */,
+				54A6A1D61B0C33D700F9D206 /* SpinRenderer.h */,
+				54A6A1D71B0C33D700F9D206 /* SpinRenderer.m */,
+			);
+			name = SpinAnimation;
+			sourceTree = "<group>";
+		};
+		54A6A1E21B0C33EC00F9D206 /* OpenGL Helper */ = {
+			isa = PBXGroup;
+			children = (
+				54A6A1CE1B0C33D700F9D206 /* SceneMesh.h */,
+				54A6A1CF1B0C33D700F9D206 /* SceneMesh.m */,
+				54A6A1CC1B0C33D700F9D206 /* OpenGLHelper.h */,
+				54A6A1CD1B0C33D700F9D206 /* OpenGLHelper.m */,
+				54A6A1D81B0C33D700F9D206 /* toImage.jpg */,
+			);
+			name = "OpenGL Helper";
+			sourceTree = "<group>";
+		};
+		54A6A2321B0C56D800F9D206 /* UIAnimationBundle */ = {
+			isa = PBXGroup;
+			children = (
+				54A6A2331B0C56D800F9D206 /* Supporting Files */,
+			);
+			path = UIAnimationBundle;
+			sourceTree = "<group>";
+		};
+		54A6A2331B0C56D800F9D206 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				54A6A2341B0C56D800F9D206 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		54E0192F1B106C2400D57EA3 /* ClothesLine */ = {
+			isa = PBXGroup;
+			children = (
+				54E019301B106C3500D57EA3 /* ClothesLineRenderer.h */,
+				54E019311B106C3500D57EA3 /* ClothesLineRenderer.m */,
+			);
+			name = ClothesLine;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		54A6A1E31B0C346400F9D206 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				54A6A1E41B0C346800F9D206 /* UIAnimation.h in Headers */,
+				54A6A1E61B0C348400F9D206 /* DeleteRenderer.h in Headers */,
+				54A6A1E51B0C347900F9D206 /* SpinRenderer.h in Headers */,
+				543A08F21B1AE1E1002A22D3 /* UIView+Genie.h in Headers */,
+				54A6A1E71B0C359800F9D206 /* SceneMesh.h in Headers */,
+				543A08C41B1AC9CE002A22D3 /* WaterRippleRenderer.h in Headers */,
+				54A6A1E81B0C359A00F9D206 /* OpenGLHelper.h in Headers */,
+				54A6A1EA1B0C35A200F9D206 /* SpinBackMesh.h in Headers */,
+				543A08CA1B1AC9E1002A22D3 /* RippleModel.h in Headers */,
+				54E019321B106C3500D57EA3 /* ClothesLineRenderer.h in Headers */,
+				54A6A1EB1B0C35A600F9D206 /* SpinFrontMesh.h in Headers */,
+				54A6A1EC1B0C35AC00F9D206 /* DeleteSceneMesh.h in Headers */,
+				543A04231B170DA2002A22D3 /* SwitchRenderer.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		54A6A1A61B0C32EB00F9D206 /* UIAnimation */ = {
@@ -115,6 +348,8 @@
 				54A6A1A31B0C32EB00F9D206 /* Sources */,
 				54A6A1A41B0C32EB00F9D206 /* Frameworks */,
 				54A6A1A51B0C32EB00F9D206 /* CopyFiles */,
+				54A6A1E31B0C346400F9D206 /* Headers */,
+				54A6A1ED1B0C38C900F9D206 /* Build Framework */,
 			);
 			buildRules = (
 			);
@@ -143,6 +378,23 @@
 			productReference = 54A6A1B21B0C32EB00F9D206 /* UIAnimationTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		54A6A2301B0C56D800F9D206 /* UIAnimationBundle */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 54A6A2371B0C56D800F9D206 /* Build configuration list for PBXNativeTarget "UIAnimationBundle" */;
+			buildPhases = (
+				54A6A22D1B0C56D800F9D206 /* Sources */,
+				54A6A22E1B0C56D800F9D206 /* Frameworks */,
+				54A6A22F1B0C56D800F9D206 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UIAnimationBundle;
+			productName = UIAnimationBundle;
+			productReference = 54A6A2311B0C56D800F9D206 /* UIAnimation.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -156,6 +408,12 @@
 						CreatedOnToolsVersion = 6.3;
 					};
 					54A6A1B11B0C32EB00F9D206 = {
+						CreatedOnToolsVersion = 6.3;
+					};
+					54A6A1EE1B0C3AD400F9D206 = {
+						CreatedOnToolsVersion = 6.3;
+					};
+					54A6A2301B0C56D800F9D206 = {
 						CreatedOnToolsVersion = 6.3;
 					};
 				};
@@ -174,6 +432,8 @@
 			targets = (
 				54A6A1A61B0C32EB00F9D206 /* UIAnimation */,
 				54A6A1B11B0C32EB00F9D206 /* UIAnimationTests */,
+				54A6A1EE1B0C3AD400F9D206 /* UIAnimationFramework */,
+				54A6A2301B0C56D800F9D206 /* UIAnimationBundle */,
 			);
 		};
 /* End PBXProject section */
@@ -186,18 +446,80 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		54A6A22F1B0C56D800F9D206 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				54A6A23B1B0C578000F9D206 /* Delete.vsl in Resources */,
+				54A6A2481B0C5D9B00F9D206 /* Spin.fsl in Resources */,
+				543A08CD1B1AC9E9002A22D3 /* Ripple.vsh in Resources */,
+				54A6A2381B0C577900F9D206 /* Spin.vsl in Resources */,
+				54A6A23A1B0C577E00F9D206 /* Delete.fsl in Resources */,
+				543A08CC1B1AC9E6002A22D3 /* Ripple.fsh in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		54A6A1ED1B0C38C900F9D206 /* Build Framework */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Build Framework";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\n\nexport FRAMEWORK_LOCN=\"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.framework\"\n\n# Create the path to the real Headers die\nmkdir -p \"${FRAMEWORK_LOCN}/Versions/A/Headers\"\n\n# Create the required symlinks\n/bin/ln -sfh A \"${FRAMEWORK_LOCN}/Versions/Current\"\n/bin/ln -sfh Versions/Current/Headers \"${FRAMEWORK_LOCN}/Headers\"\n/bin/ln -sfh \"Versions/Current/${PRODUCT_NAME}\" \\\n\"${FRAMEWORK_LOCN}/${PRODUCT_NAME}\"\n\n# Copy the public headers into the framework\n/bin/cp -a \"${TARGET_BUILD_DIR}/${PUBLIC_HEADERS_FOLDER_PATH}/\" \\\n\"${FRAMEWORK_LOCN}/Versions/A/Headers\"";
+		};
+		54A6A1F41B0C3AE400F9D206 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\n\n# If we're already inside this script then die\nif [ -n \"$RW_MULTIPLATFORM_BUILD_IN_PROGRESS\" ]; then\nexit 0\nfi\nexport RW_MULTIPLATFORM_BUILD_IN_PROGRESS=1\n\nRW_FRAMEWORK_NAME=${PROJECT_NAME}\nRW_INPUT_STATIC_LIB=\"lib${PROJECT_NAME}.a\"\nRW_FRAMEWORK_LOCATION=\"${BUILT_PRODUCTS_DIR}/${RW_FRAMEWORK_NAME}.framework\"\n\nfunction build_static_library {\n    # Will rebuild the static library as specified\n    #     build_static_library sdk\n    xcrun xcodebuild -project \"${PROJECT_FILE_PATH}\" \\\n    -target \"${TARGET_NAME}\" \\\n    -configuration \"${CONFIGURATION}\" \\\n    -sdk \"${1}\" \\\n    ONLY_ACTIVE_ARCH=NO \\\n    BUILD_DIR=\"${BUILD_DIR}\" \\\n    OBJROOT=\"${OBJROOT}\" \\\n    BUILD_ROOT=\"${BUILD_ROOT}\" \\\n    SYMROOT=\"${SYMROOT}\" $ACTION\n}\n\nfunction make_fat_library {\n    # Will smash 2 static libs together\n    #     make_fat_library in1 in2 out\n    xcrun lipo -create \"${1}\" \"${2}\" -output \"${3}\"\n}\n\n# 1 - Extract the platform (iphoneos/iphonesimulator) from the SDK name\nif [[ \"$SDK_NAME\" =~ ([A-Za-z]+) ]]; then\nRW_SDK_PLATFORM=${BASH_REMATCH[1]}\nelse\necho \"Could not find platform name from SDK_NAME: $SDK_NAME\"\nexit 1\nfi\n\n# 2 - Extract the version from the SDK\nif [[ \"$SDK_NAME\" =~ ([0-9]+.*$) ]]; then\nRW_SDK_VERSION=${BASH_REMATCH[1]}\nelse\necho \"Could not find sdk version from SDK_NAME: $SDK_NAME\"\nexit 1\nfi\n\n# 3 - Determine the other platform\nif [ \"$RW_SDK_PLATFORM\" == \"iphoneos\" ]; then\nRW_OTHER_PLATFORM=iphonesimulator\nelse\nRW_OTHER_PLATFORM=iphoneos\nfi\n\n# 4 - Find the build directory\nif [[ \"$BUILT_PRODUCTS_DIR\" =~ (.*)$RW_SDK_PLATFORM$ ]]; then\nRW_OTHER_BUILT_PRODUCTS_DIR=\"${BASH_REMATCH[1]}${RW_OTHER_PLATFORM}\"\nelse\necho \"Could not find other platform build directory.\"\nexit 1\nfi\n\n# Build the other platform.\nbuild_static_library \"${RW_OTHER_PLATFORM}${RW_SDK_VERSION}\"\n\n# If we're currently building for iphonesimulator, then need to rebuild\n#   to ensure that we get both i386 and x86_64\nif [ \"$RW_SDK_PLATFORM\" == \"iphonesimulator\" ]; then\nbuild_static_library \"${SDK_NAME}\"\nfi\n\n# Join the 2 static libs into 1 and push into the .framework\nmake_fat_library \"${BUILT_PRODUCTS_DIR}/${RW_INPUT_STATIC_LIB}\" \\\n\"${RW_OTHER_BUILT_PRODUCTS_DIR}/${RW_INPUT_STATIC_LIB}\" \\\n\"${RW_FRAMEWORK_LOCATION}/Versions/A/${RW_FRAMEWORK_NAME}\"\n\n# Ensure that the framework is present in both platform's build directories\ncp -a \"${RW_FRAMEWORK_LOCATION}/Versions/A/${RW_FRAMEWORK_NAME}\" \\\n\"${RW_OTHER_BUILT_PRODUCTS_DIR}/${RW_FRAMEWORK_NAME}.framework/Versions/A/${RW_FRAMEWORK_NAME}\"\n\n# Copy the framework to the user's desktop\nditto \"${RW_FRAMEWORK_LOCATION}\" \"${HOME}/Desktop/${RW_FRAMEWORK_NAME}.framework\"\nditto \"${BUILT_PRODUCTS_DIR}/${RW_FRAMEWORK_NAME}.bundle\" \\\n    \"${HOME}/Desktop/${RW_FRAMEWORK_NAME}.bundle\"";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		54A6A1A31B0C32EB00F9D206 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54A6A1CA1B0C33B800F9D206 /* DeleteSceneMesh.m in Sources */,
 				54A6A1AD1B0C32EB00F9D206 /* UIAnimation.m in Sources */,
+				543A08F31B1AE1E5002A22D3 /* UIView+Genie.m in Sources */,
+				543A08C51B1AC9CE002A22D3 /* WaterRippleRenderer.m in Sources */,
+				54A6A1DF1B0C33D700F9D206 /* SpinRenderer.m in Sources */,
+				54A6A1DB1B0C33D700F9D206 /* OpenGLHelper.m in Sources */,
+				543A04241B170DA2002A22D3 /* SwitchRenderer.m in Sources */,
+				54A6A1DD1B0C33D700F9D206 /* SpinBackMesh.m in Sources */,
+				54A6A1C91B0C33B800F9D206 /* DeleteRenderer.m in Sources */,
+				54E019331B106C3500D57EA3 /* ClothesLineRenderer.m in Sources */,
+				543A08CB1B1AC9E1002A22D3 /* RippleModel.m in Sources */,
+				54A6A1DC1B0C33D700F9D206 /* SceneMesh.m in Sources */,
+				54A6A1DE1B0C33D700F9D206 /* SpinFrontMesh.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		54A6A1AE1B0C32EB00F9D206 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		54A6A22D1B0C56D800F9D206 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -211,6 +533,16 @@
 			isa = PBXTargetDependency;
 			target = 54A6A1A61B0C32EB00F9D206 /* UIAnimation */;
 			targetProxy = 54A6A1B41B0C32EB00F9D206 /* PBXContainerItemProxy */;
+		};
+		54A6A1F31B0C3ADD00F9D206 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 54A6A1A61B0C32EB00F9D206 /* UIAnimation */;
+			targetProxy = 54A6A1F21B0C3ADD00F9D206 /* PBXContainerItemProxy */;
+		};
+		54A6A23D1B0C578D00F9D206 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 54A6A2301B0C56D800F9D206 /* UIAnimationBundle */;
+			targetProxy = 54A6A23C1B0C578D00F9D206 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -296,18 +628,24 @@
 		54A6A1BC1B0C32EB00F9D206 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEAD_CODE_STRIPPING = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "include/${PROJECT_NAME}";
 				SKIP_INSTALL = YES;
+				STRIP_STYLE = "non-global";
 			};
 			name = Debug;
 		};
 		54A6A1BD1B0C32EB00F9D206 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEAD_CODE_STRIPPING = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "include/${PROJECT_NAME}";
 				SKIP_INSTALL = YES;
+				STRIP_STYLE = "non-global";
 			};
 			name = Release;
 		};
@@ -343,6 +681,51 @@
 			};
 			name = Release;
 		};
+		54A6A1F01B0C3AD400F9D206 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		54A6A1F11B0C3AD400F9D206 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		54A6A2351B0C56D800F9D206 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = UIAnimationBundle/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_NAME = UIAnimation;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		54A6A2361B0C56D800F9D206 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = UIAnimationBundle/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_NAME = UIAnimation;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -362,6 +745,7 @@
 				54A6A1BD1B0C32EB00F9D206 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		54A6A1BE1B0C32EB00F9D206 /* Build configuration list for PBXNativeTarget "UIAnimationTests" */ = {
 			isa = XCConfigurationList;
@@ -370,6 +754,25 @@
 				54A6A1C01B0C32EB00F9D206 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		54A6A1EF1B0C3AD400F9D206 /* Build configuration list for PBXAggregateTarget "UIAnimationFramework" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				54A6A1F01B0C3AD400F9D206 /* Debug */,
+				54A6A1F11B0C3AD400F9D206 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		54A6A2371B0C56D800F9D206 /* Build configuration list for PBXNativeTarget "UIAnimationBundle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				54A6A2351B0C56D800F9D206 /* Debug */,
+				54A6A2361B0C56D800F9D206 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
