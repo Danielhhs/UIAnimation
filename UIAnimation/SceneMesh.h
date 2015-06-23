@@ -21,4 +21,5 @@ typedef struct {
 - (void) drawIndicesWithMode:(GLenum)mode startIndex:(GLuint)index indicesCount:(size_t)indicesCount;
 - (void) makeDynamicAndUpdateWithVertices:(const SceneMeshVertex *)vertices numberOfVertices:(size_t)numberOfVertices;
 - (void) tearDown;
+- (void) drawEntireMesh;
 @end

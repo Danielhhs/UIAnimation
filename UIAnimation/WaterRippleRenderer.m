@@ -49,6 +49,7 @@ enum
 @property (nonatomic) NSTimeInterval elapsedTime;
 @property (nonatomic) NSTimeInterval duration;
 @property (nonatomic, strong) void(^completion)(void);
+@property (nonatomic, weak) UIViewController *viewController;
 @end
 
 @implementation WaterRippleRenderer
@@ -218,6 +219,9 @@ enum
 
 - (void) update:(CADisplayLink *)displayLink
 {
+    if (self.animationView.superview == nil) {
+        [self.viewController.view addSubview:self.animationView];
+    }
     self.elapsedTime += displayLink.duration;
     if (self.elapsedTime < self.duration) {
         alpha = self.elapsedTime / self.duration;
@@ -257,19 +261,19 @@ enum
 }
 
 - (void) initiateRippleAtLocation:(CGPoint)location inViewController:(UIViewController *)viewController fromImage:(UIImage *)fromImage transitionToImage:(UIImage *)toImage duration:(NSTimeInterval)duration completion:(void (^)(void))completion {
+    self.viewController = viewController;
     self.completion = completion;
     self.duration = duration;
     [self setupGL];
     self.animationView = [[GLKView alloc] initWithFrame:viewController.view.bounds context:self.context];
     self.animationView.delegate = self;
-    [viewController.view addSubview:self.animationView];
-    
     [self loadImageIntoPond:fromImage toImage:toImage];
     NSValue *locationValue = [NSValue valueWithCGPoint:location];
     [self initiateRippleAtLocation:locationValue];
     [self performSelector:@selector(initiateRippleAtLocation:) withObject:locationValue afterDelay:0.1];
     [self performSelector:@selector(initiateRippleAtLocation:) withObject:locationValue afterDelay:0.2];
     [self performSelector:@selector(initiateRippleAtLocation:) withObject:locationValue afterDelay:0.3];
+    [self.animationView display];
     self.elapsedTime = 0;
     CADisplayLink *displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(update:)];
     [displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];

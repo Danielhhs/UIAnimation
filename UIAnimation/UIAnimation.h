@@ -13,6 +13,8 @@
 #import <UIAnimation/SwitchRenderer.h>
 #import <UIAnimation/WaterRippleRenderer.h>
 #import <UIAnimation/UIView+Genie.h>
+#import <UIAnimation/PaperFoldRenderer.h>
+#import <UIAnimation/BlindsRenderer.h>
 @interface UIAnimation : NSObject
 
 @end

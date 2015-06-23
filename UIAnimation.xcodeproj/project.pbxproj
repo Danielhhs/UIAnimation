@@ -23,6 +23,26 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		540DB4F21B316BEB008046ED /* BlindsBackMesh.h in Headers */ = {isa = PBXBuildFile; fileRef = 540DB4EA1B316BEB008046ED /* BlindsBackMesh.h */; };
+		540DB4F31B316BEB008046ED /* BlindsBackMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 540DB4EB1B316BEB008046ED /* BlindsBackMesh.m */; };
+		540DB4F41B316BEB008046ED /* BlindsFrontMesh.h in Headers */ = {isa = PBXBuildFile; fileRef = 540DB4EC1B316BEB008046ED /* BlindsFrontMesh.h */; };
+		540DB4F51B316BEB008046ED /* BlindsFrontMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 540DB4ED1B316BEB008046ED /* BlindsFrontMesh.m */; };
+		540DB4F61B316BEB008046ED /* BlindsMesh.h in Headers */ = {isa = PBXBuildFile; fileRef = 540DB4EE1B316BEB008046ED /* BlindsMesh.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		540DB4F71B316BEB008046ED /* BlindsMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 540DB4EF1B316BEB008046ED /* BlindsMesh.m */; };
+		540DB4F81B316BEB008046ED /* BlindsRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 540DB4F01B316BEB008046ED /* BlindsRenderer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		540DB4F91B316BEB008046ED /* BlindsRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 540DB4F11B316BEB008046ED /* BlindsRenderer.m */; };
+		540DB4FB1B316BF0008046ED /* Blinds.vsl in Resources */ = {isa = PBXBuildFile; fileRef = 540DB4E91B316BEB008046ED /* Blinds.vsl */; };
+		540DB5081B316DCC008046ED /* Blinds.fsl in Resources */ = {isa = PBXBuildFile; fileRef = 540DB4E81B316BEB008046ED /* Blinds.fsl */; };
+		540DB5461B317B57008046ED /* PaperFoldRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 540DB53E1B317B57008046ED /* PaperFoldRenderer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		540DB5471B317B57008046ED /* PaperFoldRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 540DB53F1B317B57008046ED /* PaperFoldRenderer.m */; };
+		540DB5481B317B57008046ED /* OpenGLSimpleMesh.h in Headers */ = {isa = PBXBuildFile; fileRef = 540DB5401B317B57008046ED /* OpenGLSimpleMesh.h */; };
+		540DB5491B317B57008046ED /* OpenGLSimpleMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 540DB5411B317B57008046ED /* OpenGLSimpleMesh.m */; };
+		540DB54A1B317B57008046ED /* PaperFoldMesh.h in Headers */ = {isa = PBXBuildFile; fileRef = 540DB5421B317B57008046ED /* PaperFoldMesh.h */; };
+		540DB54B1B317B57008046ED /* PaperFoldMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 540DB5431B317B57008046ED /* PaperFoldMesh.m */; };
+		540DB54C1B317B5E008046ED /* PaperFold.fsl in Resources */ = {isa = PBXBuildFile; fileRef = 540DB5451B317B57008046ED /* PaperFold.fsl */; };
+		540DB5551B317F25008046ED /* PaperFoldBackground.fsl in Resources */ = {isa = PBXBuildFile; fileRef = 540DB53D1B317B57008046ED /* PaperFoldBackground.fsl */; };
+		540DB5561B317F29008046ED /* PaperFold.vsl in Resources */ = {isa = PBXBuildFile; fileRef = 540DB5441B317B57008046ED /* PaperFold.vsl */; };
+		540DB5571B317F2E008046ED /* PaperFoldBackground.vsl in Resources */ = {isa = PBXBuildFile; fileRef = 540DB53C1B317B57008046ED /* PaperFoldBackground.vsl */; };
 		543A04231B170DA2002A22D3 /* SwitchRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 543A04211B170DA2002A22D3 /* SwitchRenderer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		543A04241B170DA2002A22D3 /* SwitchRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 543A04221B170DA2002A22D3 /* SwitchRenderer.m */; };
 		543A08C41B1AC9CE002A22D3 /* WaterRippleRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 543A08C21B1AC9CE002A22D3 /* WaterRippleRenderer.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -47,7 +67,7 @@
 		54A6A1E41B0C346800F9D206 /* UIAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 54A6A1AA1B0C32EB00F9D206 /* UIAnimation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		54A6A1E51B0C347900F9D206 /* SpinRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 54A6A1D61B0C33D700F9D206 /* SpinRenderer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		54A6A1E61B0C348400F9D206 /* DeleteRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 54A6A1C51B0C33B800F9D206 /* DeleteRenderer.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		54A6A1E71B0C359800F9D206 /* SceneMesh.h in Headers */ = {isa = PBXBuildFile; fileRef = 54A6A1CE1B0C33D700F9D206 /* SceneMesh.h */; };
+		54A6A1E71B0C359800F9D206 /* SceneMesh.h in Headers */ = {isa = PBXBuildFile; fileRef = 54A6A1CE1B0C33D700F9D206 /* SceneMesh.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		54A6A1E81B0C359A00F9D206 /* OpenGLHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 54A6A1CC1B0C33D700F9D206 /* OpenGLHelper.h */; };
 		54A6A1EA1B0C35A200F9D206 /* SpinBackMesh.h in Headers */ = {isa = PBXBuildFile; fileRef = 54A6A1D21B0C33D700F9D206 /* SpinBackMesh.h */; };
 		54A6A1EB1B0C35A600F9D206 /* SpinFrontMesh.h in Headers */ = {isa = PBXBuildFile; fileRef = 54A6A1D41B0C33D700F9D206 /* SpinFrontMesh.h */; };
@@ -56,6 +76,8 @@
 		54A6A23A1B0C577E00F9D206 /* Delete.fsl in Resources */ = {isa = PBXBuildFile; fileRef = 54A6A1C31B0C33B800F9D206 /* Delete.fsl */; };
 		54A6A23B1B0C578000F9D206 /* Delete.vsl in Resources */ = {isa = PBXBuildFile; fileRef = 54A6A1C41B0C33B800F9D206 /* Delete.vsl */; };
 		54A6A2481B0C5D9B00F9D206 /* Spin.fsl in Resources */ = {isa = PBXBuildFile; fileRef = 54A6A1D01B0C33D700F9D206 /* Spin.fsl */; };
+		54C92DE11B22D387002570DF /* NSBKeyframeAnimationFunctions.c in Sources */ = {isa = PBXBuildFile; fileRef = 54C92DDF1B22D387002570DF /* NSBKeyframeAnimationFunctions.c */; };
+		54C92DE21B22D387002570DF /* NSBKeyframeAnimationFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 54C92DE01B22D387002570DF /* NSBKeyframeAnimationFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		54E019321B106C3500D57EA3 /* ClothesLineRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 54E019301B106C3500D57EA3 /* ClothesLineRenderer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		54E019331B106C3500D57EA3 /* ClothesLineRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E019311B106C3500D57EA3 /* ClothesLineRenderer.m */; };
 /* End PBXBuildFile section */
@@ -98,6 +120,26 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		540DB4E81B316BEB008046ED /* Blinds.fsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Blinds.fsl; sourceTree = "<group>"; };
+		540DB4E91B316BEB008046ED /* Blinds.vsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Blinds.vsl; sourceTree = "<group>"; };
+		540DB4EA1B316BEB008046ED /* BlindsBackMesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlindsBackMesh.h; sourceTree = "<group>"; };
+		540DB4EB1B316BEB008046ED /* BlindsBackMesh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlindsBackMesh.m; sourceTree = "<group>"; };
+		540DB4EC1B316BEB008046ED /* BlindsFrontMesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlindsFrontMesh.h; sourceTree = "<group>"; };
+		540DB4ED1B316BEB008046ED /* BlindsFrontMesh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlindsFrontMesh.m; sourceTree = "<group>"; };
+		540DB4EE1B316BEB008046ED /* BlindsMesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlindsMesh.h; sourceTree = "<group>"; };
+		540DB4EF1B316BEB008046ED /* BlindsMesh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlindsMesh.m; sourceTree = "<group>"; };
+		540DB4F01B316BEB008046ED /* BlindsRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlindsRenderer.h; sourceTree = "<group>"; };
+		540DB4F11B316BEB008046ED /* BlindsRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlindsRenderer.m; sourceTree = "<group>"; };
+		540DB53C1B317B57008046ED /* PaperFoldBackground.vsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PaperFoldBackground.vsl; sourceTree = "<group>"; };
+		540DB53D1B317B57008046ED /* PaperFoldBackground.fsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PaperFoldBackground.fsl; sourceTree = "<group>"; };
+		540DB53E1B317B57008046ED /* PaperFoldRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaperFoldRenderer.h; sourceTree = "<group>"; };
+		540DB53F1B317B57008046ED /* PaperFoldRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaperFoldRenderer.m; sourceTree = "<group>"; };
+		540DB5401B317B57008046ED /* OpenGLSimpleMesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenGLSimpleMesh.h; sourceTree = "<group>"; };
+		540DB5411B317B57008046ED /* OpenGLSimpleMesh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenGLSimpleMesh.m; sourceTree = "<group>"; };
+		540DB5421B317B57008046ED /* PaperFoldMesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaperFoldMesh.h; sourceTree = "<group>"; };
+		540DB5431B317B57008046ED /* PaperFoldMesh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaperFoldMesh.m; sourceTree = "<group>"; };
+		540DB5441B317B57008046ED /* PaperFold.vsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PaperFold.vsl; sourceTree = "<group>"; };
+		540DB5451B317B57008046ED /* PaperFold.fsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PaperFold.fsl; sourceTree = "<group>"; };
 		543A04211B170DA2002A22D3 /* SwitchRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwitchRenderer.h; sourceTree = "<group>"; };
 		543A04221B170DA2002A22D3 /* SwitchRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwitchRenderer.m; sourceTree = "<group>"; };
 		543A08BD1B1AC6D4002A22D3 /* UIView+Genie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Genie.h"; sourceTree = "<group>"; };
@@ -135,6 +177,8 @@
 		54A6A1D81B0C33D700F9D206 /* toImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = toImage.jpg; sourceTree = "<group>"; };
 		54A6A2311B0C56D800F9D206 /* UIAnimation.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UIAnimation.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		54A6A2341B0C56D800F9D206 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		54C92DDF1B22D387002570DF /* NSBKeyframeAnimationFunctions.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = NSBKeyframeAnimationFunctions.c; sourceTree = "<group>"; };
+		54C92DE01B22D387002570DF /* NSBKeyframeAnimationFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSBKeyframeAnimationFunctions.h; sourceTree = "<group>"; };
 		54E019301B106C3500D57EA3 /* ClothesLineRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClothesLineRenderer.h; sourceTree = "<group>"; };
 		54E019311B106C3500D57EA3 /* ClothesLineRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClothesLineRenderer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -166,6 +210,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		540DB4941B3147DD008046ED /* PaperFold */ = {
+			isa = PBXGroup;
+			children = (
+				540DB53C1B317B57008046ED /* PaperFoldBackground.vsl */,
+				540DB53D1B317B57008046ED /* PaperFoldBackground.fsl */,
+				540DB53E1B317B57008046ED /* PaperFoldRenderer.h */,
+				540DB53F1B317B57008046ED /* PaperFoldRenderer.m */,
+				540DB5401B317B57008046ED /* OpenGLSimpleMesh.h */,
+				540DB5411B317B57008046ED /* OpenGLSimpleMesh.m */,
+				540DB5421B317B57008046ED /* PaperFoldMesh.h */,
+				540DB5431B317B57008046ED /* PaperFoldMesh.m */,
+				540DB5441B317B57008046ED /* PaperFold.vsl */,
+				540DB5451B317B57008046ED /* PaperFold.fsl */,
+			);
+			name = PaperFold;
+			sourceTree = "<group>";
+		};
+		540DB4E71B316B9E008046ED /* Blinds */ = {
+			isa = PBXGroup;
+			children = (
+				540DB4E81B316BEB008046ED /* Blinds.fsl */,
+				540DB4E91B316BEB008046ED /* Blinds.vsl */,
+				540DB4EA1B316BEB008046ED /* BlindsBackMesh.h */,
+				540DB4EB1B316BEB008046ED /* BlindsBackMesh.m */,
+				540DB4EC1B316BEB008046ED /* BlindsFrontMesh.h */,
+				540DB4ED1B316BEB008046ED /* BlindsFrontMesh.m */,
+				540DB4EE1B316BEB008046ED /* BlindsMesh.h */,
+				540DB4EF1B316BEB008046ED /* BlindsMesh.m */,
+				540DB4F01B316BEB008046ED /* BlindsRenderer.h */,
+				540DB4F11B316BEB008046ED /* BlindsRenderer.m */,
+			);
+			name = Blinds;
+			sourceTree = "<group>";
+		};
 		543A04251B170DA9002A22D3 /* Switch */ = {
 			isa = PBXGroup;
 			children = (
@@ -221,6 +299,8 @@
 		54A6A1A91B0C32EB00F9D206 /* UIAnimation */ = {
 			isa = PBXGroup;
 			children = (
+				540DB4E71B316B9E008046ED /* Blinds */,
+				540DB4941B3147DD008046ED /* PaperFold */,
 				543A08C11B1AC9BD002A22D3 /* RippleAnimation */,
 				543A08BC1B1AC6CC002A22D3 /* Genie */,
 				543A04251B170DA9002A22D3 /* Switch */,
@@ -281,6 +361,8 @@
 		54A6A1E21B0C33EC00F9D206 /* OpenGL Helper */ = {
 			isa = PBXGroup;
 			children = (
+				54C92DDF1B22D387002570DF /* NSBKeyframeAnimationFunctions.c */,
+				54C92DE01B22D387002570DF /* NSBKeyframeAnimationFunctions.h */,
 				54A6A1CE1B0C33D700F9D206 /* SceneMesh.h */,
 				54A6A1CF1B0C33D700F9D206 /* SceneMesh.m */,
 				54A6A1CC1B0C33D700F9D206 /* OpenGLHelper.h */,
@@ -325,15 +407,23 @@
 				54A6A1E41B0C346800F9D206 /* UIAnimation.h in Headers */,
 				54A6A1E61B0C348400F9D206 /* DeleteRenderer.h in Headers */,
 				54A6A1E51B0C347900F9D206 /* SpinRenderer.h in Headers */,
+				540DB4F61B316BEB008046ED /* BlindsMesh.h in Headers */,
 				543A08F21B1AE1E1002A22D3 /* UIView+Genie.h in Headers */,
 				54A6A1E71B0C359800F9D206 /* SceneMesh.h in Headers */,
 				543A08C41B1AC9CE002A22D3 /* WaterRippleRenderer.h in Headers */,
+				540DB4F21B316BEB008046ED /* BlindsBackMesh.h in Headers */,
+				540DB4F41B316BEB008046ED /* BlindsFrontMesh.h in Headers */,
+				540DB5461B317B57008046ED /* PaperFoldRenderer.h in Headers */,
 				54A6A1E81B0C359A00F9D206 /* OpenGLHelper.h in Headers */,
 				54A6A1EA1B0C35A200F9D206 /* SpinBackMesh.h in Headers */,
 				543A08CA1B1AC9E1002A22D3 /* RippleModel.h in Headers */,
+				54C92DE21B22D387002570DF /* NSBKeyframeAnimationFunctions.h in Headers */,
 				54E019321B106C3500D57EA3 /* ClothesLineRenderer.h in Headers */,
 				54A6A1EB1B0C35A600F9D206 /* SpinFrontMesh.h in Headers */,
+				540DB54A1B317B57008046ED /* PaperFoldMesh.h in Headers */,
+				540DB5481B317B57008046ED /* OpenGLSimpleMesh.h in Headers */,
 				54A6A1EC1B0C35AC00F9D206 /* DeleteSceneMesh.h in Headers */,
+				540DB4F81B316BEB008046ED /* BlindsRenderer.h in Headers */,
 				543A04231B170DA2002A22D3 /* SwitchRenderer.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -450,12 +540,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				540DB54C1B317B5E008046ED /* PaperFold.fsl in Resources */,
 				54A6A23B1B0C578000F9D206 /* Delete.vsl in Resources */,
 				54A6A2481B0C5D9B00F9D206 /* Spin.fsl in Resources */,
 				543A08CD1B1AC9E9002A22D3 /* Ripple.vsh in Resources */,
 				54A6A2381B0C577900F9D206 /* Spin.vsl in Resources */,
+				540DB5561B317F29008046ED /* PaperFold.vsl in Resources */,
+				540DB5551B317F25008046ED /* PaperFoldBackground.fsl in Resources */,
 				54A6A23A1B0C577E00F9D206 /* Delete.fsl in Resources */,
+				540DB5081B316DCC008046ED /* Blinds.fsl in Resources */,
 				543A08CC1B1AC9E6002A22D3 /* Ripple.fsh in Resources */,
+				540DB4FB1B316BF0008046ED /* Blinds.vsl in Resources */,
+				540DB5571B317F2E008046ED /* PaperFoldBackground.vsl in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -497,17 +593,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				54A6A1CA1B0C33B800F9D206 /* DeleteSceneMesh.m in Sources */,
+				540DB5491B317B57008046ED /* OpenGLSimpleMesh.m in Sources */,
+				540DB4F31B316BEB008046ED /* BlindsBackMesh.m in Sources */,
 				54A6A1AD1B0C32EB00F9D206 /* UIAnimation.m in Sources */,
 				543A08F31B1AE1E5002A22D3 /* UIView+Genie.m in Sources */,
+				540DB4F51B316BEB008046ED /* BlindsFrontMesh.m in Sources */,
+				540DB5471B317B57008046ED /* PaperFoldRenderer.m in Sources */,
+				540DB4F71B316BEB008046ED /* BlindsMesh.m in Sources */,
 				543A08C51B1AC9CE002A22D3 /* WaterRippleRenderer.m in Sources */,
 				54A6A1DF1B0C33D700F9D206 /* SpinRenderer.m in Sources */,
 				54A6A1DB1B0C33D700F9D206 /* OpenGLHelper.m in Sources */,
 				543A04241B170DA2002A22D3 /* SwitchRenderer.m in Sources */,
 				54A6A1DD1B0C33D700F9D206 /* SpinBackMesh.m in Sources */,
+				54C92DE11B22D387002570DF /* NSBKeyframeAnimationFunctions.c in Sources */,
 				54A6A1C91B0C33B800F9D206 /* DeleteRenderer.m in Sources */,
 				54E019331B106C3500D57EA3 /* ClothesLineRenderer.m in Sources */,
 				543A08CB1B1AC9E1002A22D3 /* RippleModel.m in Sources */,
 				54A6A1DC1B0C33D700F9D206 /* SceneMesh.m in Sources */,
+				540DB4F91B316BEB008046ED /* BlindsRenderer.m in Sources */,
+				540DB54B1B317B57008046ED /* PaperFoldMesh.m in Sources */,
 				54A6A1DE1B0C33D700F9D206 /* SpinFrontMesh.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
