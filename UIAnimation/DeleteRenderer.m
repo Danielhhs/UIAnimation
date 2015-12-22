@@ -102,6 +102,7 @@
 }
 
 - (void) deleteView:(UIView *)view
+        screenScale:(CGFloat)screenScale
       aniamtionView:(GLKView *)animationView
        withDuration:(NSTimeInterval)duration
             zOffset:(GLfloat)zOffset
@@ -111,7 +112,7 @@
     self.zOffset = zOffset;
     self.completion = completion;
     [self setupOpenGL];
-    texture = [OpenGLHelper setupTextureWithView:view];
+    texture = [OpenGLHelper setupTextureWithView:view textureWidth:view.bounds.size.width * screenScale textureHeight:view.bounds.size.height * screenScale screenScale:screenScale];
     self.mesh = [[DeleteSceneMesh alloc] initWithTargetView:view];
     self.targetView = view;
     

@@ -7,8 +7,10 @@
 //
 
 #import "BlindsRenderer.h"
-#import "BlindsFrontMesh.h"
-#import "BlindsBackMesh.h"
+#import "BlindsHorizontalFrontMesh.h"
+#import "BlindsHorizontalBackMesh.h"
+#import "BlindsVerticalFrontMesh.h"
+#import "BlindsVerticalBackMesh.h"
 #import "OpenGLHelper.h"
 @interface BlindsRenderer () {
     GLuint program;
@@ -18,8 +20,8 @@
     GLuint backTexture;
     GLfloat rotation;
 }
-@property (nonatomic, strong) BlindsFrontMesh *frontMesh;
-@property (nonatomic, strong) BlindsBackMesh *backMesh;
+@property (nonatomic, strong) BlindsMesh *frontMesh;
+@property (nonatomic, strong) BlindsMesh *backMesh;
 @property (nonatomic, strong) GLKView *animationView;
 @property (nonatomic) NSTimeInterval duration;
 @property (nonatomic) NSTimeInterval elapsedTime;
@@ -27,6 +29,7 @@
 @property (nonatomic) NSBKeyframeAnimationFunction interpolator;
 @property (nonatomic) NSInteger columnCount;
 @property (nonatomic) BlindsDirection direction;
+@property (nonatomic, strong) CADisplayLink *displayLink;
 @end
 
 @implementation BlindsRenderer
@@ -130,15 +133,7 @@
         [self.backMesh updateWithRotation:rotation];
         [self.animationView display];
     } else {
-        rotation = [self totalRotateAngle];
-        [self.frontMesh updateWithRotation:rotation];
-        [self.backMesh updateWithRotation:rotation];
-        [self.animationView display];
-        if (self.completion) {
-            self.completion();
-        }
-        [displayLink invalidate];
-        [self.animationView removeFromSuperview];
+        [self endAnimation];
     }
 }
 
@@ -146,33 +141,67 @@
 {
     switch (self.direction) {
         case BlindsDirectionRightToLeft:
+        case BlindsDirectionTopToBottom:
             return -M_PI_2;
+        case BlindsDirectionBottomToTop:
         case BlindsDirectionLeftToRight:
             return M_PI_2;
     }
 }
 
-- (void) transitionFromView:(UIView *)fromView toView:(UIView *)toView inViewController:(UIViewController *)viewController columnCount:(NSInteger)columnCount duration:(NSTimeInterval)duration
+- (void) transitionFromView:(UIView *)fromView
+                     toView:(UIView *)toView
+                screenScale:(CGFloat)screenScale
+           inView:(UIView *)containerView
+                columnCount:(NSInteger)columnCount
+                   duration:(NSTimeInterval)duration
 {
-    [self transitionFromView:fromView toView:toView inViewController:viewController columnCount:columnCount direction:BlindsDirectionRightToLeft duration:duration];
+    [self transitionFromView:fromView toView:toView screenScale:screenScale inView:containerView columnCount:columnCount direction:BlindsDirectionRightToLeft duration:duration];
 }
 
-- (void) transitionFromView:(UIView *)fromView toView:(UIView *)toView inViewController:(UIViewController *)viewController columnCount:(NSInteger)columnCount duration:(NSTimeInterval)duration completion:(void (^)(void))completion
+- (void) transitionFromView:(UIView *)fromView
+                     toView:(UIView *)toView
+                screenScale:(CGFloat)screenScale
+           inView:(UIView *)containerView
+                columnCount:(NSInteger)columnCount
+                   duration:(NSTimeInterval)duration
+                 completion:(void (^)(void))completion
 {
-    [self transitionFromView:fromView toView:toView inViewController:viewController columnCount:columnCount direction:BlindsDirectionRightToLeft duration:duration completion:completion];
+    [self transitionFromView:fromView toView:toView screenScale:screenScale inView:containerView columnCount:columnCount direction:BlindsDirectionRightToLeft duration:duration completion:completion];
 }
 
-- (void) transitionFromView:(UIView *)fromView toView:(UIView *)toView inViewController:(UIViewController *)viewController columnCount:(NSInteger)columnCount direction:(BlindsDirection)direction duration:(NSTimeInterval)duration
+- (void) transitionFromView:(UIView *)fromView
+                     toView:(UIView *)toView
+                screenScale:(CGFloat)screenScale
+           inView:(UIView *)containerView
+                columnCount:(NSInteger)columnCount
+                  direction:(BlindsDirection)direction
+                   duration:(NSTimeInterval)duration
 {
-    [self transitionFromView:fromView toView:toView inViewController:viewController columnCount:columnCount direction:direction duration:duration completion:nil];
+    [self transitionFromView:fromView toView:toView screenScale:screenScale inView:containerView columnCount:columnCount direction:direction duration:duration completion:nil];
 }
 
-- (void) transitionFromView:(UIView *)fromView toView:(UIView *)toView inViewController:(UIViewController *)viewController columnCount:(NSInteger)columnCount direction:(BlindsDirection)direction duration:(NSTimeInterval)duration completion:(void (^)(void))completion
+- (void) transitionFromView:(UIView *)fromView
+                     toView:(UIView *)toView
+                screenScale:(CGFloat)screenScale
+           inView:(UIView *)containerView
+                columnCount:(NSInteger)columnCount
+                  direction:(BlindsDirection)direction
+                   duration:(NSTimeInterval)duration
+                 completion:(void (^)(void))completion
 {
-    [self transitionFromView:fromView toView:toView inViewController:viewController columnCount:columnCount direction:direction duration:duration interpolator:NSBKeyframeAnimationFunctionEaseInOutBack completion:completion];
+    [self transitionFromView:fromView toView:toView screenScale:screenScale inView:containerView columnCount:columnCount direction:direction duration:duration interpolator:NSBKeyframeAnimationFunctionEaseInOutBack completion:completion];
 }
 
-- (void) transitionFromView:(UIView *)fromView toView:(UIView *)toView inViewController:(UIViewController *)viewController columnCount:(NSInteger)columnCount direction:(BlindsDirection)direction duration:(NSTimeInterval)duration interpolator:(NSBKeyframeAnimationFunction)interpolator completion:(void (^)(void))completion
+- (void) transitionFromView:(UIView *)fromView
+                     toView:(UIView *)toView
+                screenScale:(CGFloat)screenScale
+           inView:(UIView *)containerView
+                columnCount:(NSInteger)columnCount
+                  direction:(BlindsDirection)direction
+                   duration:(NSTimeInterval)duration
+               interpolator:(NSBKeyframeAnimationFunction)interpolator
+                 completion:(void (^)(void))completion
 {
     self.interpolator = interpolator;
     self.completion = completion;
@@ -180,19 +209,49 @@
     self.columnCount = columnCount;
     self.direction = direction;
     [self setupGL];
-    frontTexture = [OpenGLHelper setupTextureWithView:fromView];
-    backTexture = [OpenGLHelper setupTextureWithView:toView];
-    self.frontMesh = [[BlindsFrontMesh alloc] initWithScreenWidth:viewController.view.frame.size.width screenHeight:viewController.view.frame.size.height columns:(GLuint)columnCount direction:direction];
-    self.backMesh = [[BlindsBackMesh alloc] initWithScreenWidth:viewController.view.frame.size.width screenHeight:viewController.view.frame.size.height columns:(GLuint)columnCount direction:direction];
-    self.animationView = [[GLKView alloc] initWithFrame:viewController.view.bounds context:self.context];
+    frontTexture = [OpenGLHelper setupTextureWithView:fromView textureWidth:fromView.bounds.size.width * screenScale textureHeight:fromView.bounds.size.height * screenScale screenScale:screenScale];
+    backTexture = [OpenGLHelper setupTextureWithView:toView textureWidth:fromView.bounds.size.width * screenScale textureHeight:fromView.bounds.size.height * screenScale screenScale:screenScale];
+    self.frontMesh = [self frontMeshForDirection:direction width:fromView.bounds.size.width height:fromView.bounds.size.height columnCount:columnCount];
+    self.backMesh = [self backMeshForDirection:direction width:fromView.bounds.size.width height:fromView.bounds.size.height columnCount:columnCount];
+    self.animationView = [[GLKView alloc] initWithFrame:fromView.bounds context:self.context];
     self.animationView.delegate = self;
-    [viewController.view addSubview:self.animationView];
+    [containerView addSubview:self.animationView];
     
     self.elapsedTime = 0;
     rotation = 0;
     
-    CADisplayLink *displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(update:)];
-    [displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
+    self.displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(update:)];
+    [self.displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
 }
 
+- (BlindsMesh *) frontMeshForDirection:(BlindsDirection)direction width:(CGFloat)width height:(CGFloat)height columnCount:(NSInteger)columnCount
+{
+    if (direction == BlindsDirectionLeftToRight || direction == BlindsDirectionRightToLeft) {
+        return [[BlindsHorizontalFrontMesh alloc] initWithScreenWidth:width screenHeight:height columns:(GLuint)columnCount direction:direction];
+    } else {
+        return [[BlindsVerticalFrontMesh alloc] initWithScreenWidth:width screenHeight:height rowCount:(GLuint)columnCount direction:direction];
+    }
+}
+
+- (BlindsMesh *) backMeshForDirection:(BlindsDirection)direction width:(CGFloat)width height:(CGFloat)height columnCount:(NSInteger)columnCount
+{
+    if (direction == BlindsDirectionLeftToRight || direction == BlindsDirectionRightToLeft) {
+        return [[BlindsHorizontalBackMesh alloc] initWithScreenWidth:width screenHeight:height columns:(GLuint)columnCount direction:direction];
+    } else {
+        return [[BlindsVerticalBackMesh alloc] initWithScreenWidth:width screenHeight:height rowCount:(GLuint)columnCount direction:direction];
+    }
+}
+
+- (void) endAnimation
+{
+    rotation = [self totalRotateAngle];
+    [self.frontMesh updateWithRotation:rotation];
+    [self.backMesh updateWithRotation:rotation];
+    [self.animationView display];
+    if (self.completion) {
+        self.completion();
+    }
+    [self.displayLink invalidate];
+    [self.animationView removeFromSuperview];
+}
 @end

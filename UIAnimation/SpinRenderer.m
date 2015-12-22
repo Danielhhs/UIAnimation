@@ -114,6 +114,7 @@
 
 - (void) spinFromView:(UIView *)fromView
                toView:(UIView *)toView
+          screenScale:(CGFloat)screenScale
         animationView:(GLKView *)animationView
              duration:(NSTimeInterval)duration
                 angle:(GLfloat)angle
@@ -124,8 +125,8 @@
     self.targetZOffset = zoffset;
     self.completion = completion;
     [self setupOpenGL];
-    frontTexture = [OpenGLHelper setupTextureWithView:fromView];
-    backTexture = [OpenGLHelper setupTextureWithView:toView];
+    frontTexture = [OpenGLHelper setupTextureWithView:fromView textureWidth:fromView.bounds.size.width * screenScale textureHeight:fromView.bounds.size.height * screenScale screenScale:screenScale];
+    backTexture = [OpenGLHelper setupTextureWithView:toView textureWidth:toView.bounds.size.width * screenScale textureHeight:toView.bounds.size.height * screenScale screenScale:screenScale];
     self.frontMesh = [[SpinFrontMesh alloc] initWithTargetView:fromView];
     self.backMesh = [[SpinBackMesh alloc] initWithTargetView:toView];
     self.duration = duration;

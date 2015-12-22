@@ -12,14 +12,12 @@
 typedef NS_ENUM(NSInteger, BlindsDirection) {
     BlindsDirectionRightToLeft = 0,
     BlindsDirectionLeftToRight = 1,
+    BlindsDirectionTopToBottom = 2,
+    BlindsDirectionBottomToTop = 3
 };
 @interface BlindsMesh : SceneMesh
 
 - (void) drawColumnAtIndex:(NSInteger)index;
 - (void) updateWithRotation:(GLfloat)rotation;
-- (instancetype) initWithScreenWidth:(size_t)screenWidth
-                        screenHeight:(size_t)screenHeight
-                             columns:(GLuint)columnCount
-                           direction:(BlindsDirection)direction;
 
 @end

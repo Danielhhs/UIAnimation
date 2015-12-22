@@ -1,12 +1,12 @@
 //
-//  BlindBackMesh.h
+//  BlindsFrontMesh.h
 //  BlindAnimation
 //
 //  Created by Huang Hongsen on 6/7/15.
 //  Copyright (c) 2015 cn.daniel. All rights reserved.
 //
 
-#import "BlindsMesh.h"
+#import "BlindsHorizontalMesh.h"
 
-@interface BlindsBackMesh : BlindsMesh
+@interface BlindsHorizontalFrontMesh : BlindsHorizontalMesh
 @end

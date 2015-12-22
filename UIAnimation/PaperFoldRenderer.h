@@ -18,22 +18,22 @@ typedef NS_ENUM(NSInteger, PaperFoldAnimationAction) {
 
 @property (nonatomic, strong) EAGLContext *context;
 
-- (void) startPaperFoldWithView:(UIView *)view inViewController:(UIViewController *)viewController headerHeight:(size_t)headerHeight rowCount:(size_t)rowCount action:(PaperFoldAnimationAction)action completion:(void(^)(void))completion;
+- (void) startPaperFoldWithView:(UIView *)view screenScale:(CGFloat)screenScale inViewController:(UIViewController *)viewController headerHeight:(size_t)headerHeight rowCount:(size_t)rowCount action:(PaperFoldAnimationAction)action completion:(void(^)(void))completion;
 
-- (void) startPaperFoldWithView:(UIView *)view backgroundView:(UIView *)backgroundView inViewController:(UIViewController *)viewController headerHeight:(size_t)headerHeight rowCount:(size_t)rowCount action:(PaperFoldAnimationAction)action completion:(void(^)(void))completion;
+- (void) startPaperFoldWithView:(UIView *)view backgroundView:(UIView *)backgroundView screenScale:(CGFloat)screenScale inViewController:(UIViewController *)viewController headerHeight:(size_t)headerHeight rowCount:(size_t)rowCount action:(PaperFoldAnimationAction)action completion:(void(^)(void))completion;
 
 - (void) updatePaperFoldWithOffset:(CGFloat)offset;
 
 - (void) finishPaperFoldAnimationWithTouchLocation:(CGPoint)location velocity:(CGPoint)velocity;
 
-- (void) foldView:(UIView *)view inViewController:(UIViewController *)viewController duration:(NSTimeInterval)duration headerHeight:(size_t)headerHeight rowCount:(size_t)rowCount;
+- (void) foldView:(UIView *)view screenScale:(CGFloat)screenScale inViewController:(UIViewController *)viewController duration:(NSTimeInterval)duration headerHeight:(size_t)headerHeight rowCount:(size_t)rowCount;
 
-- (void) foldView:(UIView *)view backgroundView:(UIView *)backgroundView inViewController:(UIViewController *)viewController duration:(NSTimeInterval)duration headerHeight:(size_t)headerHeight rowCount:(size_t)rowCount;
+- (void) foldView:(UIView *)view backgroundView:(UIView *)backgroundView screenScale:(CGFloat)screenScale inViewController:(UIViewController *)viewController duration:(NSTimeInterval)duration headerHeight:(size_t)headerHeight rowCount:(size_t)rowCount;
 
--(void) foldView:(UIView *)view backgroundView:(UIView *)backgroundView inViewController:(UIViewController *)viewController duration:(NSTimeInterval)duration headerHeight:(size_t)headerHeight rowCount:(size_t)rowCount interpolator:(NSBKeyframeAnimationFunction)interpolator;
+-(void) foldView:(UIView *)view backgroundView:(UIView *)backgroundView screenScale:(CGFloat)screenScale inViewController:(UIViewController *)viewController duration:(NSTimeInterval)duration headerHeight:(size_t)headerHeight rowCount:(size_t)rowCount interpolator:(NSBKeyframeAnimationFunction)interpolator;
 
-- (void) foldView:(UIView *)view backgroundView:(UIView *)backgroundView inViewController:(UIViewController *)viewController duration:(NSTimeInterval)duration headerHeight:(size_t)headerHeight rowCount:(size_t)rowCount completion:(void(^)(void))completion;
+- (void) foldView:(UIView *)view backgroundView:(UIView *)backgroundView screenScale:(CGFloat)screenScale inViewController:(UIViewController *)viewController duration:(NSTimeInterval)duration headerHeight:(size_t)headerHeight rowCount:(size_t)rowCount completion:(void(^)(void))completion;
 
--(void) foldView:(UIView *)view backgroundView:(UIView *)backgroundView inViewController:(UIViewController *)viewController duration:(NSTimeInterval)duration headerHeight:(size_t)headerHeight rowCount:(size_t)rowCount interpolator:(NSBKeyframeAnimationFunction)interpolator completion:(void(^)(void))completion;
+-(void) foldView:(UIView *)view backgroundView:(UIView *)backgroundView screenScale:(CGFloat)screenScale inViewController:(UIViewController *)viewController duration:(NSTimeInterval)duration headerHeight:(size_t)headerHeight rowCount:(size_t)rowCount interpolator:(NSBKeyframeAnimationFunction)interpolator completion:(void(^)(void))completion;
 
 @end

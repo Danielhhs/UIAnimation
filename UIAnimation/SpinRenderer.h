@@ -14,6 +14,7 @@
 
 - (void) spinFromView:(UIView *)fromView
                toView:(UIView *)toView
+          screenScale:(CGFloat)screenScale
         animationView:(GLKView *)animationView
              duration:(NSTimeInterval)duration
                 angle:(GLfloat)angle

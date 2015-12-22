@@ -15,27 +15,31 @@
 
 - (void) transitionFromView:(UIView *)fromView
                      toView:(UIView *)toView
-           inViewController:(UIViewController *)viewController
+                screenScale:(CGFloat)screenScale
+           inView:(UIView *)containerView
                 columnCount:(NSInteger)columnCount
                    duration:(NSTimeInterval)duration;
 
 - (void) transitionFromView:(UIView *)fromView
                      toView:(UIView *)toView
-           inViewController:(UIViewController *)viewController
+                screenScale:(CGFloat)screenScale
+           inView:(UIView *)containerView
                 columnCount:(NSInteger)columnCount
                    duration:(NSTimeInterval)duration
                  completion:(void(^)(void))completion;
 
 - (void) transitionFromView:(UIView *)fromView
                      toView:(UIView *)toView
-           inViewController:(UIViewController *)viewController
+                screenScale:(CGFloat)screenScale
+           inView:(UIView *)containerView
                 columnCount:(NSInteger)columnCount
                   direction:(BlindsDirection)direction
                    duration:(NSTimeInterval)duration;
 
 - (void) transitionFromView:(UIView *)fromView
                      toView:(UIView *)toView
-           inViewController:(UIViewController *)viewController
+                screenScale:(CGFloat)screenScale
+           inView:(UIView *)containerView
                 columnCount:(NSInteger)columnCount
                   direction:(BlindsDirection)direction
                    duration:(NSTimeInterval)duration
@@ -43,10 +47,13 @@
 
 - (void) transitionFromView:(UIView *)fromView
                      toView:(UIView *)toView
-           inViewController:(UIViewController *)viewController
+                screenScale:(CGFloat)screenScale
+           inView:(UIView *)containerView
                 columnCount:(NSInteger)columnCount
                   direction:(BlindsDirection)direction
                    duration:(NSTimeInterval)duration
                interpolator:(NSBKeyframeAnimationFunction)interpolator
                  completion:(void(^)(void))completion;
+
+- (void) endAnimation;
 @end

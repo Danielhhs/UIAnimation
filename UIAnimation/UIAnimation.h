@@ -15,6 +15,7 @@
 #import <UIAnimation/UIView+Genie.h>
 #import <UIAnimation/PaperFoldRenderer.h>
 #import <UIAnimation/BlindsRenderer.h>
+#import <UIAnimation/GridRenderer.h>
 @interface UIAnimation : NSObject
 
 @end

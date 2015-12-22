@@ -13,6 +13,7 @@
 @property (nonatomic, strong) GLKView *animationView;
 
 - (void) deleteView:(UIView *)view
+        screenScale:(CGFloat)screenScale
       aniamtionView:(GLKView *)animationView
        withDuration:(NSTimeInterval)duration
             zOffset:(GLfloat)zOffset

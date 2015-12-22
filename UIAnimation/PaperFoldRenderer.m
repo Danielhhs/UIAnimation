@@ -159,24 +159,24 @@
     glClearColor(0, 0, 0, 1);
 }
 
-- (void) setupAnimationContextInView:(UIView *)view inViewController:(UIViewController *)viewController headerHeight:(size_t)headerHeight rowCount:(size_t)rowCount completion:(void(^)(void))completion
+- (void) setupAnimationContextInView:(UIView *)view screenScale:(CGFloat)screenScale inViewController:(UIViewController *)viewController headerHeight:(size_t)headerHeight rowCount:(size_t)rowCount completion:(void(^)(void))completion
 {
     self.headerHeight = headerHeight;
     self.completion = completion;
     
     [self setupFrontGL];
-    texture = [OpenGLHelper setupTextureWithView:view];
+    texture = [OpenGLHelper setupTextureWithView:view textureWidth:view.bounds.size.width * screenScale textureHeight:view.bounds.size.height * screenScale screenScale:screenScale];
     self.mesh = [[PaperFoldMesh alloc] initWithScreenWidth:view.frame.size.width screenHeight:view.frame.size.height rowCount:rowCount headerHeight:headerHeight];
     
     if (self.backgroundView) {
-        [self setupBackgroundProgram];
+        [self setupBackgroundProgramWithScreenScale:screenScale];
     }
     self.animationView = [[GLKView alloc] initWithFrame:view.frame context:self.context];
     self.animationView.delegate = self;
     [viewController.view addSubview:self.animationView];
 }
 
-- (void) setupBackgroundProgram
+- (void) setupBackgroundProgramWithScreenScale:(CGFloat)screenScale
 {
     [EAGLContext setCurrentContext:self.context];
     GLenum error = glGetError();
@@ -189,23 +189,23 @@
     backgroundMVPLoc = glGetUniformLocation(backgroundProgram, "u_mvpMatrix");
     backgroundSampler = glGetUniformLocation(backgroundProgram, "s_tex");
     
-    backgroundTexture = [OpenGLHelper setupTextureWithView:self.backgroundView];
+    backgroundTexture = [OpenGLHelper setupTextureWithView:self.backgroundView textureWidth:self.backgroundView.bounds.size.width * screenScale textureHeight:self.backgroundView.frame.size.height * screenScale screenScale:screenScale];
     self.backgroundMesh = [[OpenGLSimpleMesh alloc] initWithScreenWidth:self.backgroundView.frame.size.width screenHeight:self.backgroundView.frame.size.height];
 }
 
 #pragma mark - Interactive Animation
-- (void) startPaperFoldWithView:(UIView *)view inViewController:(UIViewController *)viewController headerHeight:(size_t)headerHeight rowCount:(size_t)rowCount action:(PaperFoldAnimationAction)action completion:(void (^)(void))completion
+- (void) startPaperFoldWithView:(UIView *)view screenScale:(CGFloat)screenScale inViewController:(UIViewController *)viewController headerHeight:(size_t)headerHeight rowCount:(size_t)rowCount action:(PaperFoldAnimationAction)action completion:(void (^)(void))completion
 {
-    [self startPaperFoldWithView:view backgroundView:nil inViewController:viewController headerHeight:headerHeight rowCount:rowCount action:action completion:completion];
+    [self startPaperFoldWithView:view backgroundView:nil screenScale:screenScale inViewController:viewController headerHeight:headerHeight rowCount:rowCount action:action completion:completion];
 }
 
-- (void) startPaperFoldWithView:(UIView *)view backgroundView:(UIView *)backgroundView inViewController:(UIViewController *)viewController headerHeight:(size_t)headerHeight rowCount:(size_t)rowCount action:(PaperFoldAnimationAction)action completion:(void(^)(void))completion
+- (void) startPaperFoldWithView:(UIView *)view backgroundView:(UIView *)backgroundView screenScale:(CGFloat)screenScale inViewController:(UIViewController *)viewController headerHeight:(size_t)headerHeight rowCount:(size_t)rowCount action:(PaperFoldAnimationAction)action completion:(void(^)(void))completion
 {
     self.backgroundView = backgroundView;
     self.dragging = YES;
     self.duration = 1.f;
     self.interpolator = NSBKeyframeAnimationFunctionEaseOutBounce;
-    [self setupAnimationContextInView:view inViewController:viewController headerHeight:headerHeight rowCount:rowCount completion:completion];
+    [self setupAnimationContextInView:view screenScale:screenScale inViewController:viewController headerHeight:headerHeight rowCount:rowCount completion:completion];
     if (action == PaperFoldAnimationActionExpand) {
         self.currentYLocation = self.headerHeight;
     } else {
@@ -244,34 +244,34 @@
 }
 
 #pragma mark - Static Animation
-- (void) foldView:(UIView *)view inViewController:(UIViewController *)viewController duration:(NSTimeInterval)duration headerHeight:(size_t)headerHeight rowCount:(size_t)rowCount
+- (void) foldView:(UIView *)view screenScale:(CGFloat)screenScale inViewController:(UIViewController *)viewController duration:(NSTimeInterval)duration headerHeight:(size_t)headerHeight rowCount:(size_t)rowCount
 {
-    [self foldView:view backgroundView:nil inViewController:viewController duration:duration headerHeight:headerHeight rowCount:rowCount ];
+    [self foldView:view backgroundView:nil screenScale:screenScale inViewController:viewController duration:duration headerHeight:headerHeight rowCount:rowCount ];
 }
 
-- (void) foldView:(UIView *)view backgroundView:(UIView *)backgroundView inViewController:(UIViewController *)viewController duration:(NSTimeInterval)duration headerHeight:(size_t)headerHeight rowCount:(size_t)rowCount
+- (void) foldView:(UIView *)view backgroundView:(UIView *)backgroundView screenScale:(CGFloat)screenScale inViewController:(UIViewController *)viewController duration:(NSTimeInterval)duration headerHeight:(size_t)headerHeight rowCount:(size_t)rowCount
 {
-    [self foldView:view backgroundView:backgroundView inViewController:viewController duration:duration headerHeight:headerHeight rowCount:rowCount completion:nil];
+    [self foldView:view backgroundView:backgroundView screenScale:screenScale inViewController:viewController duration:duration headerHeight:headerHeight rowCount:rowCount completion:nil];
 }
 
-- (void) foldView:(UIView *)view backgroundView:(UIView *)backgroundView inViewController:(UIViewController *)viewController duration:(NSTimeInterval)duration headerHeight:(size_t)headerHeight rowCount:(size_t)rowCount completion:(void (^)(void))completion
+- (void) foldView:(UIView *)view backgroundView:(UIView *)backgroundView screenScale:(CGFloat)screenScale inViewController:(UIViewController *)viewController duration:(NSTimeInterval)duration headerHeight:(size_t)headerHeight rowCount:(size_t)rowCount completion:(void (^)(void))completion
 {
-    [self foldView:view backgroundView:backgroundView inViewController:viewController duration:duration headerHeight:headerHeight rowCount:rowCount interpolator:NSBKeyframeAnimationFunctionEaseOutBounce completion:completion];
+    [self foldView:view backgroundView:backgroundView screenScale:screenScale inViewController:viewController duration:duration headerHeight:headerHeight rowCount:rowCount interpolator:NSBKeyframeAnimationFunctionEaseOutBounce completion:completion];
 }
 
-- (void) foldView:(UIView *)view backgroundView:(UIView *)backgroundView inViewController:(UIViewController *)viewController duration:(NSTimeInterval)duration headerHeight:(size_t)headerHeight rowCount:(size_t)rowCount interpolator:(NSBKeyframeAnimationFunction)interpolator
+- (void) foldView:(UIView *)view backgroundView:(UIView *)backgroundView screenScale:(CGFloat)screenScale inViewController:(UIViewController *)viewController duration:(NSTimeInterval)duration headerHeight:(size_t)headerHeight rowCount:(size_t)rowCount interpolator:(NSBKeyframeAnimationFunction)interpolator
 {
-    [self foldView:view backgroundView:backgroundView inViewController:viewController duration:duration headerHeight:headerHeight rowCount:rowCount interpolator:interpolator completion:nil];
+    [self foldView:view backgroundView:backgroundView screenScale:screenScale inViewController:viewController duration:duration headerHeight:headerHeight rowCount:rowCount interpolator:interpolator completion:nil];
 }
 
-- (void) foldView:(UIView *)view backgroundView:(UIView *)backgroundView inViewController:(UIViewController *)viewController duration:(NSTimeInterval)duration headerHeight:(size_t)headerHeight rowCount:(size_t)rowCount interpolator:(NSBKeyframeAnimationFunction)interpolator completion:(void (^)(void))completion
+- (void) foldView:(UIView *)view backgroundView:(UIView *)backgroundView screenScale:(CGFloat)screenScale inViewController:(UIViewController *)viewController duration:(NSTimeInterval)duration headerHeight:(size_t)headerHeight rowCount:(size_t)rowCount interpolator:(NSBKeyframeAnimationFunction)interpolator completion:(void (^)(void))completion
 {
     self.duration = duration;
     self.backgroundView = backgroundView;
     self.yOffset = 0;
     self.action = PaperFoldAnimationActionExpand;
     self.interpolator = interpolator;
-    [self setupAnimationContextInView:view inViewController:viewController headerHeight:headerHeight rowCount:rowCount completion:completion];
+    [self setupAnimationContextInView:view screenScale:screenScale inViewController:viewController headerHeight:headerHeight rowCount:rowCount completion:completion];
     self.elapsedTime = 0;
     CADisplayLink *displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(update:)];
     [displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
